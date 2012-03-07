@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<part>
+		<destination mode="self" zone="more" />
+		<data><![CDATA[
+			<li><a href="Layer/Article.php?zone=article&amp;id=6#_Article" rev="async">
+				<em>Colorado</em>
+				<small>Population: 4,861,515 - Capital: Denver</small>
+			</a></li>
+		]]></data>	
+	</part>
+</root>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<title set="waForm">Form</title>
+	<title set="waFormLabel">With Label</title>
+	<title set="waFormNoLabel">Without Label</title>
+	<part>
+		<destination mode="append" zone="waHome" create="true" />
+		<data/>
+	</part>
+
+	<part>
+		<destination mode="replace" zone="waForm" create="true" />
+		<data><![CDATA[
+			<div class="iBlock">
+				<p>There are many things you can do with forms and WebApp.Net.</p>
+			</div>
+			<form><div class="iPanel">
+				<fieldset>
+					<legend>Controls</legend>
+					<ul>
+						<li><input type="checkbox" id="_check1" name="check1" class="iToggle" title="YES|NO" /><label for="_check1">Checkbox 1</label></li>
+						<li><input type="checkbox" id="_check2" name="check2" class="iToggle" title="YES|NO" /><label for="_check2">Checkbox 2</label></li>
+						<li class="iRadio" value="autoback">Radio Sample
+							<label><input type="radio" name="radio1" value="1" /> Radio 1</label>
+							<label><input type="radio" name="radio1" value="1" /> Radio 2</label>
+							<label><input type="radio" name="radio1" value="1" disabled="disabled" /> Disabled Radio 3</label>
+							<label><input type="radio" name="radio1" value="1" checked="checked" /> Radio 4</label>
+						</li>
+					</ul>
+				</fieldset>
+			</div></form>
+			<div class="iMenu">
+				<h3>Text controls</h3>
+				<ul class="iArrow">
+					<li><a href="#_FormLabel">With labels</a></li>
+					<li><a href="#_FormNoLabel">Or without</a></li>
+				</ul>
+			</div>
+		]]></data>
+	</part>
+	<part>
+		<destination mode="replace" zone="waFormLabel" create="true" />
+		<data><![CDATA[
+			<form><div class="iPanel">
+				<fieldset>
+					<legend>With labels</legend>
+					<ul>
+						<li><label>Text Box</label><input type="text" name="sample1" /></li>
+						<li><label>Password</label><input type="text" name="sample2" /></li>
+						<li><label>Text Area</label>
+							<textarea name="sample3" rows="5"></textarea></li>
+					</ul>
+				</fieldset>
+			</div></form>
+		]]></data>
+	</part>
+	<part>
+		<destination mode="replace" zone="waFormNoLabel" create="true" />
+		<data><![CDATA[
+			<form><div class="iPanel">
+				<fieldset>
+					<legend>Or without</legend>
+					<ul>
+						<li><input type="text" name="sample3" placeholder="Text Box" /></li>
+						<li><input type="text" name="sample4" placeholder="Password" /></li>
+						<li><textarea name="sample5" rows="5"></textarea></li>
+					</ul>
+				</fieldset>
+			</div></form>
+		]]></data>
+	</part>
+</root>

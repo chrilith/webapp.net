@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<title set="waImages">Progessive</title>
+
+	<part>
+		<destination mode="replace" zone="waImages" create="true" />
+		<data><![CDATA[
+			<div id="test">test</div>
+			<div class="iBlock">
+				<p>You can activate progressive images loading feature so that images are loaded only when visible.</p>
+			</div>
+			<h2>Sample</h2>
+			<div>
+				<span>
+					<img src="Img/pic1.jpg" width="300" height="430" />
+				</span>
+				<span><img
+					src="Img/pic2.jpg" width="90" height="60" /><img
+					src="Img/pic3.jpg" width="90" height="60" style="margin:0 13px" /><img
+					src="Img/pic4.jpg" width="90" height="60" /></span>
+				<span><img
+					src="Img/pic5.jpg" width="90" height="60" /><img
+					src="Img/pic6.jpg" width="90" height="60" style="margin:0 13px" /><img
+					src="Img/pic7.jpg" width="90" height="60" /></span>
+				<span><img
+					src="Img/pic2.jpg" width="90" height="60" /><img
+					src="Img/pic3.jpg" width="90" height="60" style="margin:0 13px" /><img
+					src="Img/pic4.jpg" width="90" height="60" /></span>
+				<span><img
+					src="Img/pic5.jpg" width="90" height="60" /><img
+					src="Img/pic6.jpg" width="90" height="60" style="margin:0 13px" /><img
+					src="Img/pic7.jpg" width="90" height="60" /></span>
+			</div>
+		]]></data>
+	</part>
+</root>

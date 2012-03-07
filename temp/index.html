@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>WebApp.Net Demo</title>
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<link rel="apple-touch-startup-image" href="Img/splash.png" />
+		<link rel="apple-touch-icon" href="Img/icon.png" />
+		
+		<link rel="Stylesheet" type="text/css" href="../Design/Render.css" />
+<!--	<link rel="Stylesheet" type="text/css" href="Design/RenderRTL.css" />
+		<link rel="Stylesheet" type="text/css" href="Design/Themes.css" />
+		<link rel="Stylesheet" type="text/css" href="Design/Firefox.css" />
+-->
+		<script type="text/javascript" src="../Action/Logic.js"></script>
+		<script type="text/javascript" src="../Action/Compatibility.js"></script>
+		<script type="text/javascript" src="../Extensions/CoreHookManager/CoreHookManager.js"></script>
+		<script type="text/javascript" src="../Extensions/CoreNavigationManager/CoreNavigationManager.js"></script>
+		<script type="text/javascript" src="../Extensions/CoreEventManager/CoreEventManager.js"></script>
+		<script type="text/javascript" src="../Extensions/CoreLoaderAnimator/CoreLoaderAnimator.js"></script>
+		<script type="text/javascript" src="../Extensions/CoreContentRequester/CoreContentRequester.js"></script>
+		<script type="text/javascript" src="../Extensions/CoreProgressiveImageLoading/CoreProgressiveImageLoading.js"></script>
+		<script type="text/javascript" src="../Extensions/CoreUIMoreButton/CoreUIMoreButton.js"></script>
+		<script type="text/javascript" src="../Extensions/CoreUIRadioList/CoreUIRadioList.js"></script>
+		<script type="text/javascript" src="../Extensions/CoreUISwitchButton/CoreUISwitchButton.js"></script>
+		<script type="text/javascript" src="../Extensions/CoreURLManager/CoreURLManager.js"></script>
+
+		<link rel="Stylesheet" type="text/css" href="design/base.css" />
+		<script type="text/javascript" src="action/global.js"></script>
+		<script>
+			var timerID;
+			
+			var handler = function() {
+				console.log("async event");
+			};
+			
+			WA.addEventListenerAsync("test", "click", handler, false);
+			WA.addEventListenerAsync("test", "click", handler, false);	// TODO: Ajoute normalement 2 handlers ???
+			//WA.removeEventListenerAsync("test", "click", handler, false);
+			
+			WA.Progressive(true);
+
+			WA.AddEventListener("beginslide", function() {
+				//WA.ProgressHUD("Rechargement des donnees");
+			//	clearTimeout(timerID);
+			});
+
+			WA.AddEventListener("endasync", function(evt) {
+				if (!evt.target.responseXML) {
+					WA.Loader("oki");
+					clearTimeout(timerID);
+				}
+			});
+			
+			function searchLoader() {
+				WA.Loader("oki", 1);
+				timerID = setTimeout(WA.Loader, 5000, 'oki');
+			}
+
+			function test() {
+				WA.Form('headForm');
+				document.getElementById("search").focus();
+				return false;
+			}
+			
+			
+		</script>
+	</head>
+	<body -dir="rtl"><div id="WebApp">
+	
+	<script type="application/x-javascript">
+
+	</script>
+	
+	
+	
+		<div id="iPL"></div>
+		<div id="iLoader"><span>Loading...</span></div>
+
+		<div class="iLoader" id="load"><span>Loading...</span></div>
+
+<button type="button" onclick="WebApp.loader('more', 1)">start</button>
+<button type="button" onclick="WebApp.loader('more', 0)">stop</button>
+
+
+		<div id="iHeader">
+			<a href="#" id="waBackButton">Back</a>
+			<a href="#" id="waHomeButton">Home</a>
+			<a href="#" onclick="return WA.HideBar()"><span id="waHeadTitle">WebApp.Net</span></a>
+
+<!-- Add an hidden form in the header. Will be shown pressing search button -->
+			<form class="iForm" id="headForm" action="layer/top-form.php" onsubmit="searchLoader()">
+				<a href="#" rel="action" id="gogo" class="iButton iBAction">Search</a>
+				<a href="#" rel="back" class="iButton iBClassic">Cancel</a>
+				<script type="text/javascript">
+					WA.Loader("gogo", 1);
+
+				</script>
+
+				<fieldset>
+					<legend>Search</legend>
+					<input type="search" name="search" id="search" placeholder="Search term here" />
+				</fieldset>
+			</form>
+
+			<div class="iItem" id="tab1">
+				<div class="iTab" style="float:right">
+					<ul id="list">
+						<li><a href="#" -rel="action" -onclick="alert('coucou');return false"><img src="WebApp/Img/up.png" style="position:relative;top:2px;margin:0 2px 0 4px" /></a></li>
+						<li><a href="#" -rel="action" -onclick="alert('coucou');return false"><img src="WebApp/Img/down.png" style="position:relative;top:2px;margin:0 4px 0 2px" /></a></li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+
+		<div id="iGroup">
+
+			<div class="iLayer" id="waHome" title="Home">
+<div class="iMenu">
+				<ul class="iArrow">
+	<li><a href="TEMP/k.php" rev="async">submit link to async</a></li>
+	<li><a href="">Test</a></li>
+	<li class="iMore" id="more">
+		<a href="layer/wa_test.xml" target="_blank" rev="async" title="Loading"><span>Test</span></a>
+	</li>
+</ul>
+				</div>
+
+
+
+				<a href="#" rel="action" onclick="return test()" id="oki" class="iButton iBClassic"><span>Search</span></a>
+
+				<div class="iMenu">
+					<h3>New features</h3>
+					<ul class="iArrow">
+						<li><a href="#_Adapt">Adaptive style</a></li>
+						<li><a href="layer/wa_images.xml#_Images" rev="async" target="_blank">Progressive loading</a></li>
+						<li><a href="#_Twitter">Request &amp; JSON</a></li>
+					</ul>
+					
+					<h3>Asynchronous content</h3>
+					<ul class="iArrow">
+						<li><a href="layer/wa_create.xml#_New" rev="async"><span>Dynamic</span>Layer creation</a></li>
+						<li><a href="layer/list-incremental.php" rev="async">Incremental list</a></li>
+					</ul>
+
+					<h3>UI elements</h3>
+					<ul class="iArrow">
+						<li><a href="#_Amaze">Menu</a></li>
+						<li><a href="#_Amaze">List</a></li>
+						<li><a href="#_Buttons">Buttons</a></li>
+						<li><a href="Layer/wa_form.xml#_Form" rev="async">Form</a></li>
+						<li><a href="#_Amaze">Tabs</a></li>
+						<li><a href="Layer/wa_media.xml#_Media" rev="async">Quicktime media</a></li>
+						<li><a href="Layer/wa_links.xml#_Links" rev="async"><span>Classic</span>Links</a></li>
+					</ul>
+
+					<h3>System</h3>
+					<ul>
+						<li><span><script> document.write(WA.Version); </script></span>Version</li>
+						<li><span><script> document.write(navigator.platform || "Unknown"); </script></span>Platform</li>
+					</ul>
+				</div>
+				<div class="iFooter">WebApp.Net<br/>&copy;2008-2009 Chris Apers,<br/>all rights reserved</div>
+			</div>
+			<div class="iLayer" id="waForm" title="Home"></div>
+
+<!-- This layer is included directly in the main document, but it also can be loaded asynchronously -->
+
+			<div class="iLayer" id="waAdapt" title="Adaptive style">
+				<div class="iBlock">
+					<p>Many style elements has been revamped to allow great flexibility. For instance,
+						you can easily change the header colors with a single 'background-color'.</p>
+					<p>You'll find a simple theme file in the demo folder with modification of common elements.</p>
+				</div>
+			</div>
+
+			<div class="iLayer" id="waButtons" title="Buttons">
+				<a href="javascript:void(0)" onclick="alert('Hi there!')" rel="action" class="iButton iBWarn">Alert</a>
+				<a href="#" onclick="return WA.Back()" rel="action" class="iButton iBAction">Back</a>
+
+				<div class="iBlock">
+					<h1>Header</h1>
+					<p>You can easily add custom buttons in the header.</p>
+
+					<h1>The big one</h1>
+					<p>Big buttons with pushed state are also available on almost any HTML element. This sample show you buttons styles applied to html button, span and link.</p>
+					<p>
+						<input type="button" class="iPush iBClassic" value="White Button" style="width:100%" />
+						<span class="iPush iBWarn" style="width:100%">Red Button</span>
+						<a href="javascript:void(0)" class="iPush iBCancel" style="width:100%">Black Button</a>
+					</p>
+					<h1>In menu</h1>
+					<p>Buttons are also available in menus.</p>
+				</div>
+				<div class="iMenu">
+					<ul>
+						<li><a href="javascript:void(0)" class="iButton iBAction">Action</a><a href="javascript:void(0)">Link only</a></li>
+						<li><a href="javascript:void(0)" class="iButton iBWarn">Action</a><a href="javascript:void(0)">Link only</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="iLayer" id="waTwitter" title="Twitter Trends">
+				<div class="iBlock">
+					<p>WebApp.Net has support for cross-domain request using proxy script and JSON request.</p>
+					<input type="button" id="twButton" class="iPush iBClassic" value="Get Trends" style="width:100%" onclick="twitterTrends()" />
+				</div>
+				<div class="iMenu" id="twResult">
+					<h3></h3>
+					<ul class="iArrow"></ul>
+				</div>				
+			</div>
+
+		</div>
+	</div></body>
+</html>
