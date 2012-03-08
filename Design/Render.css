@@ -1,8 +1,4 @@
-html {
-	-webkit-text-size-adjust:none;
-	-webkit-touch-callout:none;
-	height:100%;
-}
+
 
 *:not(input):not(textarea):not(select),
 	input[type=image],
@@ -20,14 +16,7 @@ body * {
 	-webkit-tap-highlight-color:rgba(0,0,0,0);
 	z-index:0;
 }
-body {
-	margin:0;
-	color:#000;
-	background:#aebac2 url(Img/bg.png); 
-	height:100%;
-/*	-webkit-transform:translateX(0); 
-	-webkit-transform:translate3d(0,0,0);*/
-}
+
 img { border:0 }
 
 a[rel=action],
@@ -890,4 +879,27 @@ li.iRadio a label { display:none }
 	font-size:24px;
 	font-weight:bold;
 	min-width:64px;
+}
+
+
+/**BEGIN
+ * new styles to be moved to its "Extensions" folder when done
+ *
+ */
+
+html { height: 100%; }
+body {
+	height: 100%;
+	margin: 0;
+
+	color: #000;
+	background-color: #c5ccd3;
+	background-image:
+		-webkit-gradient(linear, left top, right top,
+						 color-stop(.75, transparent),
+						 color-stop(.75, rgba(255,255,255,.1)) );
+	-webkit-background-size: 7px;
+
+	-webkit-text-size-adjust: none;
+	-webkit-touch-callout: none;
 }
