@@ -996,10 +996,10 @@ body {
 	background-color: #fff;
 	
 	border: solid 1px #a9abae;
-	font-size: 13px;		/* TODO: adjust */
+	font-size: 13px;
 	font-weight: bold;
-	line-height: 15px;		/* TODO: adjust */
-	padding: 5px 17px 8px;	/* TODO: adjust */
+	line-height: 15px;
+	padding: 4px 20px 8px;
 
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
