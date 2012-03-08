@@ -110,12 +110,14 @@
 
 <div class="iLoader" id="load"><span>Loading...</span></div>
 
-<button type="button" onclick="WebApp.loader('load', 1)">start</button>
-<button type="button" onclick="WebApp.loader('load', 0)">stop</button>
-
 		<div id="iGroup">
 
 			<div class="iLayer" id="waHome" title="Home">
+
+			<button onclick="WebApp.loader('load', 1)">Start</button>
+			<button onclick="WebApp.loader('load', 0)">Stop</button>
+
+
 <div class="iMenu">
 				<ul class="iArrow">
 	<li><a href="TEMP/k.php" rev="async">submit link to async</a></li>
