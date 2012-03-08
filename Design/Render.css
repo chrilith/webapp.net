@@ -894,11 +894,27 @@ body {
 
 	color: #000;
 	background-color: #c5ccd3;
+
 	background-image:
 		-webkit-gradient(linear, left top, right top,
 						 color-stop(.75, transparent),
 						 color-stop(.75, rgba(255,255,255,.1)) );
+	background-image:
+		-webkit-linear-gradient(left,
+						transparent 75%,
+						rgba(255,255,255,.1) 75% );
+	background-image:
+		-moz-linear-gradient(left,
+						transparent 75%,
+						rgba(255,255,255,.1) 75% );
+	background-image:
+		linear-gradient(left,
+						transparent 75%,
+						rgba(255,255,255,.1) 75% );
+
 	-webkit-background-size: 7px;
+	-moz-background-size: 7px;
+	background-size: 7px;
 
 	-webkit-text-size-adjust: none;
 	-webkit-touch-callout: none;
