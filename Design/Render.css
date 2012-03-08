@@ -987,7 +987,7 @@ body {
 }
 
 /* A generic button */
-.iLayer > .iButton,
+#iGroup .iLayer > .iButton,
 .iLayer > button,
 .iLayer > input[type="submit"],
 .iLayer > input[type="button"],
@@ -1005,16 +1005,22 @@ body {
 	-moz-border-radius: 10px;
 	border-radius: 10px;
 
-	margin: 0 0 0 10px;
+	margin: 0;
 	cursor: pointer;
-	min-height: 44px;
 	
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+	
+	/* FIXME: Defined above */
+	max-width: auto;
+	height: auto;
+	display: inline;
+	float: none;
+	-webkit-border-image: none !important
 }
 
-.iLayer > .iButton:active,
+#iGroup .iLayer > .iButton:active,
 .iLayer > button:active,
 .iLayer > input[type="submit"]:active,
 .iLayer > input[type="button"]:active,
