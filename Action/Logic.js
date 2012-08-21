@@ -1066,6 +1066,7 @@ if (_touch) {
 		if (o) o.style.webkitTransform = "";
 	}
 
+	// DISABLED LATER, NOW USE THE NEW MANAGER
 	function ListenClick(e) {
 		if (_._sliding) {
 			return NoEvent(e);
